@@ -13,7 +13,7 @@ def gen_doors():
     return doors
 
 #Host knows the door example
-while num_trials < 100000:
+while num_trials < 1000000:
     trial_doors = gen_doors()
     contestant_choice = trial_doors.pop(random.randint(0, 2))
     trial_doors.remove("goat")
@@ -24,7 +24,7 @@ while num_trials < 100000:
         switch_win_count += 1
     num_trials += 1
 
-print("\n\nIf the host shows you a goat: ")
+print("\n\nIf the host knowingly reveals a goat: ")
 print("Probability of winning if you stay with your door:")
 print(stay_win_count / num_trials)
 print("Probability of winning if you switch doors:")
@@ -35,7 +35,7 @@ num_trials = 0
 switch_win_count = 0
 stay_win_count = 0
 #Contestant luckily gets to end
-while num_trials < 100000:
+while num_trials < 1000000:
     trial_doors = gen_doors()
     contestant_choice = trial_doors.pop(random.randint(0, 2))
     removed_door = trial_doors.pop(random.randint(0, 1))
@@ -48,7 +48,7 @@ while num_trials < 100000:
         num_trials += 1
 
 
-print("\n\nIf you successfully reveal a goat door: ")
+print("\n\nIf the host unknowingly reveals a goat: ")
 print("Probability of winning if you stay with your door:")
 print(stay_win_count / num_trials)
 print("Probability of winning if you switch doors:")
