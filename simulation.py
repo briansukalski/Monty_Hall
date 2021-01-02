@@ -24,10 +24,9 @@ while num_trials < 100000:
         switch_win_count += 1
     num_trials += 1
 
-print("If the host shows you a goat: /n")
+print("\n\nIf the host shows you a goat: ")
 print("Probability of winning if you stay with your door:")
 print(stay_win_count / num_trials)
-print("/n")
 print("Probability of winning if you switch doors:")
 print(switch_win_count / num_trials)
 
@@ -39,7 +38,7 @@ stay_win_count = 0
 while num_trials < 100000:
     trial_doors = gen_doors()
     contestant_choice = trial_doors.pop(random.randint(0, 2))
-    removed_door = trial_doors.pop(0)
+    removed_door = trial_doors.pop(random.randint(0, 1))
     if removed_door == "goat":
         switch_choice = trial_doors[0]
         if contestant_choice == "car":
@@ -49,9 +48,8 @@ while num_trials < 100000:
         num_trials += 1
 
 
-print("If you successfully reveal a goat door: /n")
+print("\n\nIf you successfully reveal a goat door: ")
 print("Probability of winning if you stay with your door:")
 print(stay_win_count / num_trials)
-print("/n")
 print("Probability of winning if you switch doors:")
 print(switch_win_count / num_trials)
